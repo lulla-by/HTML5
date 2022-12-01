@@ -1,22 +1,42 @@
 @import url("./normalize.css");
 @import url("./reset.css");
-
+/* 본문 스타일 */
 body {
   background: #f8f0fc;
   font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
 }
+/* 레이아웃 */
+.header, .visual, .main, .slogan, .footer-inner {
+  width: 940px;
+  box-sizing: border-box;
+  margin: 0 auto;
+}
+/* 헤더 */
 .header {
   background: #dbe4ff;
+  padding: 0 30px;
+  height: 15vh;
 }
+/* 비주얼 */
 .visual {
   background: #d0bfff;
+  height: 10vh;
 }
+/* 메인 */
 .main {
   background: #e6fcf5;
+  height: 50vh;
 }
+/* 슬로건 */
 .slogan {
   background: #ffe3e3;
+  height:10vh;
 }
+/* 푸터 */
 .footer {
-  background: #fff9db;
+  background: gray;
+}
+.footer-inner {
+  height: 15vh;
+  background: silver;
 }

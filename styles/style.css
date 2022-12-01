@@ -1,5 +1,9 @@
 @import url("./normalize.css");
 @import url("./reset.css");
+/* 기본스타일 앞으로 등장하는 모든 것은 보더박스로 사용*/
+*, *::before, *::after {
+  box-sizing: border-box;
+}
 /* 본문 스타일 */
 body {
   background: #f8f0fc;
@@ -8,7 +12,6 @@ body {
 /* 레이아웃 */
 .header, .visual, .main, .slogan, .footer-inner {
   width: 940px;
-  box-sizing: border-box;
   margin: 0 auto;
 }
 /* 헤더 */
@@ -26,11 +29,44 @@ body {
 .main {
   background: #e6fcf5;
   height: 50vh;
+  /* float: left;/ */
+  display: flow-root;
+  padding: 0 15px;
+
 }
+/* .main::after {
+  content: "dd";
+  clear: both;
+  display: block;
+} */
+
+/* .box {
+  float:right
+} */
+
+.group{
+  margin: 0 15px;
+  float: left;
+}
+.group1{
+  background: violet;
+  width: 250px;
+}
+.group2{
+  background: salmon;
+  width: 380px;
+}
+.group3{
+  background: gold;
+  width: 190px;
+}
+
 /* 슬로건 */
 .slogan {
   background: #ffe3e3;
   height:10vh;
+  clear: both;
+  /* margin-top: 150px; */
 }
 /* 푸터 */
 .footer {

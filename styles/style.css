@@ -28,16 +28,17 @@ body {
 /* 메인 */
 .main {
   background: #e6fcf5;
-  height: 50vh;
+  min-height: 450px;
   display: flex;
-  flex-direction: row;
-
+  flex-flow: row norwrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 30px;
 }
 
 .group1{
   background: violet;
   width: 250px;
-  order: 1;
 }
 .group2{
   background: salmon;

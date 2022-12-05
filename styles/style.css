@@ -1,5 +1,6 @@
 @import url("./normalize.css");
 @import url("./reset.css");
+@import url("./fontello.css");
 /* 기본스타일 앞으로 등장하는 모든 것은 보더박스로 사용*/
 *, *::before, *::after {
   box-sizing: border-box;
@@ -16,10 +17,41 @@ body {
 }
 /* 헤더 */
 .header {
-  background: #dbe4ff;
+  background: #fff;
   padding: 0 30px;
   height: 15vh;
+  border-radius: 0 0 15px 15px;
 }
+.member{
+  background: pink;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-end;
+}
+/* 우선순위 규칙 */
+/* li(type selector) - 1점 */
+/* .first(class selector) - 10점 */
+/* #item(ID selector) - 100점 */
+/* 선택자의 점수합이 같을때 후순위가 우선이 됨 */
+
+/* .member -> 10점, li -> 1점, ::before -> 1점,  총 12점*/
+/* .member li::before{
+  content: ":";
+} */
+/* .first -> 10점, ::before -> 1점, 총 11점 */
+/* .member .first ::before{
+  content: "첫번째";
+} */
+
+/* .member li:first-child::before{
+  content: "";
+} */
+
+/* .member li:nth-child(n+2)::before{
+  background-color: skyblue;
+  content: ":";
+} */
+
 /* 비주얼 */
 .visual {
   background: #d0bfff;

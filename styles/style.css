@@ -1,5 +1,15 @@
 @import url("./normalize.css");
 @import url("./reset.css");
+/* 숨김 콘텐츠 */
+.a11y-hidden{
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  /* polygon */
+  clip-path: polygon(0 0, 0 0, 0 0);
+}
+
 /* 기본스타일 앞으로 등장하는 모든 것은 보더박스로 사용*/
 *, *::before, *::after {
   box-sizing: border-box;
@@ -15,7 +25,7 @@ a{
 /* 본문 스타일 */
 body {
   color:#181818;
-  background: #ccc;
+  background: #ccc linear-gradient(to bottom, #ccc, 0%, #eee, 35%, #efefef, 70%, #fff 100%);
   font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
   font-size: 1.4rem;
 }
@@ -74,6 +84,52 @@ body {
 .divider{
   margin-right: 4px;
 }
+.navigation{
+  padding-bottom: 80px;
+}
+/* 메인메뉴 */
+.menu{
+  border-top: 2px solid currentColor;
+  background: #e85e2c
+  linear-gradient(
+    to bottom,
+    #1e5799 0%,
+    #ef9126 0%,
+    #e85e2c 35%,
+    #e85e2c 70%,
+    #ef9126 100%
+    );
+  border-radius: 0 0 5px 5px;
+  /* 높이를 고정했기 때문에 flow root 필요 X */
+  /* display: flow-root; */
+  padding-left: 230px;
+  /* border 2px포함 47px로  */
+  height: 47px;
+}
+
+.menu-item{
+  /* background: aqua; */
+  float: left;
+  border-left: 2px solid #fff;
+}
+.menu-button{
+  border: 0;
+  background: transparent;
+  padding:0 23px;
+  line-height: 45px;
+  font-size: 15px;
+  font-weight: 700;
+  color:#fff;
+  text-shadow: 1px 1px 0 #000,-1px -1px 0 #000;
+}
+
+
+/* 서브메뉴 */
+.sub-menu{
+  background-color: pink;
+  position: absolute;
+  display: none;
+}
 
 /* 비주얼 */
 .visual {
@@ -116,7 +172,7 @@ body {
 }
 /* 푸터 */
 .footer {
-  background: gray;
+  background: #ccc linear-gradient(to bottom, #ccc, 0%, #eee, 35%, #efefef, 70%, #fff 100%);
 }
 .footer-inner {
   height: 15vh;

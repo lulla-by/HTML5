@@ -1,5 +1,7 @@
+@import url("./fonts.css");
 @import url("./normalize.css");
 @import url("./reset.css");
+
 /* 숨김 콘텐츠 */
 .a11y-hidden{
   position: absolute;
@@ -44,19 +46,16 @@ body {
 }
 /* 로고 */
 .logo{
-  /* background-color: blue; */
   position: absolute; 
   /* 1. 로고 포지션 잡아주고 */
   top:45px;
   left:60px;
-
   /* 로고를 위에 띄우기: 마크업순서에서 기본적으로 0으로 지정, 여유롭게 하기 위해서 숫자를 넉넉하게 부여, static이 아닐경우 가능 */
   z-index: 10;
 }
 
 /* 텍스트 링크 모음 */
 .member{
-  /* background-color: aqua; */
   text-align: right;
   padding: 4px 0;
   /* position 속성을 활용하여 . member 영역을 오른쪽으로 10px 만큼 이동하기 */
@@ -88,7 +87,7 @@ body {
   margin-right: 4px;
 }
 .navigation{
-  padding-bottom: 80px;
+  padding-bottom: 40px;
 }
 /* 메인메뉴 */
 .menu{
@@ -108,10 +107,16 @@ body {
   padding-left: 230px;
   /* border 2px포함 47px로  */
   height: 47px;
+  /* 메뉴바 기준 */
   position: relative;
+  /* 밑에 가면 .menu-accessibility, .menu-qna, .menu-archive 세가지는 right를 0으로 지정 */
 }
+
+
 .menu > li:nth-child(-n+3) {
+  /* li기준 */
   position: relative;
+  /* 밑에 가면 .menu-html, .menu-css, .menu-standards 세가지는 left를 0으로 지정 */
 }
 
 .menu-item {
@@ -143,10 +148,10 @@ body {
 
 /* 서브메뉴 */
 .sub-menu{
-  background-color: pink;
   position: absolute;
   display: none;
   top: 47px;
+  padding: 4px 0;
 }
 .menu-html, .menu-css, .menu-standards{
   left: 0;
@@ -162,8 +167,38 @@ white-space: nowrap;
 }
 .sub-menu li {
   display: inline-block;
-  padding-left: 1em;
-  background-color: gold;
+}
+
+.sub-menu a::before {
+  content: "\e805"; 
+  font-family: 'fontello';
+  font-weight: normal;
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: .2em;
+  text-align: center;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1em;
+  margin-left: .2em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+.sub-menu a:hover::before,
+.sub-menu a:focus::before{
+  content: "\e801";
+}
+
+.sub-menu a {
+  display: inline-block;
+  padding: 6px 0;
+}
+.sub-menu a:hover,
+.sub-menu a:focus {
+  color: red;
 }
 
 /* 비주얼 */

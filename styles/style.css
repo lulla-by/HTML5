@@ -49,6 +49,9 @@ body {
   /* 1. 로고 포지션 잡아주고 */
   top:45px;
   left:60px;
+
+  /* 로고를 위에 띄우기: 마크업순서에서 기본적으로 0으로 지정, 여유롭게 하기 위해서 숫자를 넉넉하게 부여, static이 아닐경우 가능 */
+  z-index: 10;
 }
 
 /* 텍스트 링크 모음 */
@@ -105,13 +108,17 @@ body {
   padding-left: 230px;
   /* border 2px포함 47px로  */
   height: 47px;
+  position: relative;
+}
+.menu > li:nth-child(-n+3) {
+  position: relative;
 }
 
-.menu-item{
-  /* background: aqua; */
+.menu-item {
   float: left;
   border-left: 2px solid #fff;
 }
+/* 구체성 점수 -> 20점 */
 .menu-button{
   border: 0;
   background: transparent;
@@ -120,15 +127,43 @@ body {
   font-size: 15px;
   font-weight: 700;
   color:#fff;
-  text-shadow: 1px 1px 0 #000,-1px -1px 0 #000;
+  text-shadow: 1px 1px 0 #000, -1px -1px 0 #000;
 }
 
+/* 구체성점수 -> 10점 */
+.is-active .menu-button{
+  color:#ff0;
+}
+
+.is-active .menu-button::after{
+  content: "";  
+  display: block;
+  border-top: 2px solid #000;
+}
 
 /* 서브메뉴 */
 .sub-menu{
   background-color: pink;
   position: absolute;
   display: none;
+  top: 47px;
+}
+.menu-html, .menu-css, .menu-standards{
+  left: 0;
+}
+
+.menu-accessibility, .menu-qna, .menu-archive {
+  right: 0;
+}
+
+.is-active .sub-menu{
+display: block;
+white-space: nowrap;
+}
+.sub-menu li {
+  display: inline-block;
+  padding-left: 1em;
+  background-color: gold;
 }
 
 /* 비주얼 */

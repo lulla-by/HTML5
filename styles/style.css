@@ -86,10 +86,14 @@ body {
 .divider{
   margin-right: 4px;
 }
+
+
+
+/* 메인메뉴 */
 .navigation{
   padding-bottom: 40px;
 }
-/* 메인메뉴 */
+
 .menu{
   border-top: 2px solid currentColor;
   background: #e85e2c
@@ -146,13 +150,22 @@ body {
   border-top: 2px solid #000;
 }
 
+
+
+
+
+
+
 /* 서브메뉴 */
 .sub-menu{
+  /* 포지션이 absolute면 모든 요소들이 inline-block으로 변함 */
   position: absolute;
   display: none;
   top: 47px;
   padding: 4px 0;
 }
+
+
 .menu-html, .menu-css, .menu-standards{
   left: 0;
 }
@@ -193,6 +206,7 @@ white-space: nowrap;
 }
 
 .sub-menu a {
+  /* background-color:#1e5799; */
   display: inline-block;
   padding: 6px 0;
 }
@@ -201,10 +215,73 @@ white-space: nowrap;
   color: red;
 }
 
+
+
+
+
+
+
+
 /* 비주얼 */
+@keyframes moveEffect{
+  0%{
+    font-size: 12px;
+    /* transform버전 */
+    /* transform: scale(0.5); */
+
+    color:rgba(0,0,0,0.2);
+    /* padding: 0; */
+
+    /* postion으로 글자이동 */
+    /* top: 0;
+    left: 0; */
+    
+    /* transform으로 글자이동 */
+    transform: translate(0, 0);
+    
+  }
+  100%{
+    font-size: 24px;
+    /* transform버전 */
+    /* transform: scale(1); */
+    
+    color:rgb(0, 0, 0, 1);
+    /* padding: 75px 0 0 400px; */
+
+    /* postion으로 글자이동 */
+    /* top: 75px;
+    left: 400px; */
+
+    /* transform으로 글자이동 */
+    transform: translate(400px, 75px);
+  }
+}
 .visual {
-  background: #d0bfff;
-  height: 10vh;
+  /* background: #d0bfff; */
+  height: 120px;
+
+   /* postion absolute || transform으로 글자이동 */
+    position: relative;
+}
+
+.visual-text{
+  /* postion으로 글자이동 */
+  /* position: relative; */
+
+  /* postion absolute로 글자이동 */
+  /* position: absolute; */
+
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  background-color: coral;
+  animation-name: moveEffect;
+  animation-duration: 2000ms;
+  /* 애니메이션을 채우는 모드가 끝난 상태로 */
+  animation-fill-mode: forwards;
+  display: inline-block;
+
+   /* transform으로 글자이동 */
+  /* font-size: 24px;
+  transform-origin: left top; */
 }
 /* 메인 */
 .main {

@@ -26,10 +26,19 @@ a{
 }
 /* 본문 스타일 */
 body {
-  color:#181818;
-  background: #ccc linear-gradient(to bottom, #ccc, 0%, #eee, 35%, #efefef, 70%, #fff 100%);
-  font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+  color:#212121;
   font-size: 1.4rem;
+  font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+ 
+  /* background-color: #ccc;
+  background-image: url("./images/bg_flower.png"), linear-gradient(to bottom, #ccc, 0%, #eee, 35%, #efefef, 70%, #fff 100%);
+  background-repeat: no-repeat, rpeat;
+  background-position: 50% 0, 0 0; */
+
+
+  /* 단축표기법 */
+  background:  url("./images/bg_flower.png") no-repeat 50% 0,
+  #ccc linear-gradient(to bottom, #ccc, 0%, #eee, 35%, #efefef, 70%, #fff 100%) repeat 0 0;
 }
 /* 레이아웃 */
 .header, .visual, .main, .slogan, .footer-inner {
@@ -259,7 +268,6 @@ white-space: nowrap;
   }
 }
 .visual {
-  background: #d0bfff;
   height: 120px;
    /* postion absolute || transform으로 글자이동 */
     position: relative;
@@ -273,7 +281,6 @@ white-space: nowrap;
   position: absolute;
 
   font-family: Georgia, 'Times New Roman', Times, serif;
-  background-color: coral;
   animation-name: moveEffect;
   animation-duration: 2000ms;
   /* 애니메이션을 채우는 모드가 끝난 상태로 */

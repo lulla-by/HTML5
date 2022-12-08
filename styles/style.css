@@ -246,6 +246,8 @@ white-space: nowrap;
     /* transform: scale(1); */
     
     color:rgb(0, 0, 0, 1);
+
+    /* padding사용 가능하지만 reflow를 발생시켜 성능을 저하시킴 */
     /* padding: 75px 0 0 400px; */
 
     /* postion으로 글자이동 */
@@ -257,9 +259,8 @@ white-space: nowrap;
   }
 }
 .visual {
-  /* background: #d0bfff; */
+  background: #d0bfff;
   height: 120px;
-
    /* postion absolute || transform으로 글자이동 */
     position: relative;
 }
@@ -268,8 +269,8 @@ white-space: nowrap;
   /* postion으로 글자이동 */
   /* position: relative; */
 
-  /* postion absolute로 글자이동 */
-  /* position: absolute; */
+  /* postion absolute로 글자이동 + 스크롤바 제어 */
+  position: absolute;
 
   font-family: Georgia, 'Times New Roman', Times, serif;
   background-color: coral;
@@ -277,7 +278,10 @@ white-space: nowrap;
   animation-duration: 2000ms;
   /* 애니메이션을 채우는 모드가 끝난 상태로 */
   animation-fill-mode: forwards;
-  display: inline-block;
+  animation-timing-function: ease-in-out;
+
+  /* display block에서 inline-block으로 변경시켜서 스크롤바 생성 제어 */
+  /* display: inline-block; */
 
    /* transform으로 글자이동 */
   /* font-size: 24px;

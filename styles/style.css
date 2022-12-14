@@ -95,21 +95,20 @@ body {
 }
 
 .event{
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: space-between;
   border-bottom: 1px solid #aaa;
   /* align-items: center; */
  
 }
 .event-title{
   background-color: pink;
+  float: left;
 }
 .event-button-wrapper{
+  /* background-color: yellow; */
   display: flex;
   flex-flow: row nowrap;
-  /* background-color: yellow; */
-  gap: 5px; align-items: flex-start;
+  justify-content: flex-end;
+  gap: 5px;
 }
 #eventDetail{
   /* background-color: mintcream; */

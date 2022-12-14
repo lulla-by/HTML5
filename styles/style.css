@@ -810,14 +810,14 @@ padding: 0 5px;
 }
 .favorite-list li{
   margin-top: 10px;
-  counter-reset:10;
   counter-increment: number;
   background-color: pink;
+  position: relative;
 
   /* 가운데 맞추고 */
-  display: flex;
+  /* display: flex;
   flex-flow: row nowrap;  
-  align-items: center;
+  align-items: center; */
 }
 .favorite-list li::before{
   content: counter(number);
@@ -838,15 +838,18 @@ padding: 0 5px;
 
 /* em태그 영역~ */
 .up, .stop, .down{
-  display: inline-block;
+  /* display: inline-block; */
+  position: absolute;
+  right: 0;
+  top:50%;
+  margin-top: -6px;
   width: 20px;
   height: 11px;
   background:lime url("./images/rank.png") no-repeat 100% 0%;
-
-  /* 오른쪽으로 보내기 */
-  position: absolute;
-  right: 0;
   /* margin-left: auto; */
+  /* 오른쪽으로 보내기 */
+
+
 }
 .stop{
                     /* X축 Y축 */
